@@ -1,18 +1,14 @@
-# UNDO Website
+# UNDO — cinematic website
 
-Premium responsive landing page for UNDO — "Undo Your Day."
+This is the second, Apple-inspired version of the UNDO site:
+- sticky hero
+- scroll-driven object movement
+- horizontal product track
+- cinematic story section
+- reveal animations
+- responsive mobile layout
+- WhatsApp + Instagram CTAs
 
-## Files
-- index.html — complete website
-- style.css — responsive styling and animations
-- script.js — smooth scrolling
-- assets/ — put your real UNDO product photos/logo here
+It uses plain HTML/CSS/JS so it can be deployed directly to Vercel without a build step.
 
-## Before publishing
-1. Replace the WhatsApp number in `index.html`:
-   `919XXXXXXXXX`
-2. Replace the CSS-generated product visuals with real product photos when ready.
-3. Update any delivery wording if your final policy changes.
-4. Upload the folder to your hosting provider, or deploy the folder/repository through Vercel.
-
-The website is intentionally built so the product section can later be upgraded to real image assets without changing the overall layout.
+Real product photography can be dropped into `assets/` and wired into the product art sections later.
