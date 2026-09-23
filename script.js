@@ -1,35 +1,53 @@
-const progress=document.querySelector('.progress');
-const reveals=document.querySelectorAll('.reveal');
-const hero=document.querySelector('.hero');
-const card=document.querySelector('.card-main');
-const back=document.querySelector('.card-back');
-const heroCopy=document.querySelector('.hero-copy');
-const track=document.querySelector('.product-track');
-const cinema=document.querySelector('.cinema');
-const stage=document.querySelector('.stage-product');
+const progress=document.querySelector(".scroll-progress");
+const hero=document.querySelector(".hero");
+const heroLogo=document.querySelector(".hero-logo-wrap");
+const heroProduct=document.querySelector(".hero-product");
+const heroCopy=document.querySelector(".hero-copy");
+const story=document.querySelector(".story-scene");
+const storyCard=document.querySelector(".story-card");
+const productRail=document.querySelector(".product-rail");
+const toggle=document.querySelector(".menu-toggle");
+const mobileMenu=document.querySelector(".mobile-menu");
 
-function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-function onScroll(){
-  const y=window.scrollY, max=document.documentElement.scrollHeight-innerHeight;
-  progress.style.width=(y/max*100)+'%';
+function clamp(v,a=0,b=1){return Math.max(a,Math.min(b,v))}
+function update(){
+  const max=document.documentElement.scrollHeight-innerHeight;
+  progress.style.width=(scrollY/max*100)+"%";
 
   const h=hero.getBoundingClientRect();
-  const hp=clamp(-h.top/(h.height-innerHeight),0,1);
-  if(card){card.style.transform=`rotate(${4+hp*13}deg) scale(${1+hp*.12}) translateY(${hp*-70}px)`;back.style.transform=`rotate(${11-hp*8}deg) translateY(${30+hp*80}px)`;heroCopy.style.transform=`translateY(${hp*-80}px)`;heroCopy.style.opacity=1-hp*.8}
+  const hp=clamp(-h.top/(h.height-innerHeight));
+  heroLogo.style.transform=`scale(${1-hp*.48}) translateY(${hp*-70}px)`;
+  heroLogo.style.opacity=1-hp*.72;
+  heroCopy.style.transform=`translateY(${hp*-65}px)`;
+  heroProduct.style.transform=`rotate(${7+hp*14}deg) translateY(${hp*-95}px) scale(${1+hp*.1})`;
 
-  const m=document.querySelector('.menu-section').getBoundingClientRect();
-  if(track && m.top<innerHeight && m.bottom>0){
-    const p=clamp((innerHeight-m.top)/(m.height+innerHeight),0,1);
-    track.style.transform=`translateX(${-p*260}px)`;
-  }
+  const s=story.getBoundingClientRect();
+  const sp=clamp(-s.top/(s.height-innerHeight));
+  storyCard.style.transform=`translateY(${(1-sp)*100}px) rotate(${(1-sp)*-5}deg) scale(${1.08-sp*.08})`;
 
-  const c=cinema.getBoundingClientRect();
-  if(c.top<innerHeight && c.bottom>0){
-    const p=clamp(-c.top/(c.height-innerHeight),0,1);
-    stage.style.transform=`translateY(${(1-p)*90}px) scale(${1.15-p*.15}) rotate(${(1-p)*-5}deg)`;
+  if(innerWidth>800){
+    const m=document.querySelector(".menu").getBoundingClientRect();
+    const mp=clamp((innerHeight-m.top)/(m.height+innerHeight));
+    productRail.style.transform=`translateX(${-mp*360}px)`;
   }
 }
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
-reveals.forEach(x=>io.observe(x));
-window.addEventListener('scroll',onScroll,{passive:true});
-onScroll();
+window.addEventListener("scroll",update,{passive:true});
+window.addEventListener("resize",update);
+update();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("visible")),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
+
+toggle.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
+
+let startX=0, startScroll=0;
+productRail.addEventListener("pointerdown",e=>{
+  if(innerWidth<=800)return;
+  startX=e.clientX; startScroll=productRail.scrollLeft; productRail.setPointerCapture(e.pointerId);
+});
+productRail.addEventListener("pointermove",e=>{
+  if(innerWidth<=800 || !startX)return;
+  productRail.scrollLeft=startScroll-(e.clientX-startX);
+});
+productRail.addEventListener("pointerup",()=>startX=0);

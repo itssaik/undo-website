@@ -1,14 +1,18 @@
-# UNDO — cinematic website
+# UNDO Final Cinematic Website
 
-This is the second, Apple-inspired version of the UNDO site:
-- sticky hero
-- scroll-driven object movement
-- horizontal product track
-- cinematic story section
-- reveal animations
-- responsive mobile layout
-- WhatsApp + Instagram CTAs
+This version uses the supplied UNDO logo exactly as provided in `assets/undo-logo.png`.
 
-It uses plain HTML/CSS/JS so it can be deployed directly to Vercel without a build step.
+Highlights:
+- Mobile-first responsive layout
+- Sticky Apple-inspired hero
+- Scroll-driven logo/product animation
+- Cinematic story scene
+- Horizontal product rail
+- Touch swipe on mobile
+- Mobile navigation
+- Reveal animations
+- WhatsApp ordering: +91 74484 34744
+- Instagram: @cafe.undo
+- Reduced-motion accessibility support
 
-Real product photography can be dropped into `assets/` and wired into the product art sections later.
+Replace the stylized product artwork with real UNDO product photos later by editing the `.art` / `.fake-product` sections or wiring images into them.

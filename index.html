@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>UNDO — Undo Your Day.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3eee6">
+<title>UNDO — Undo Your Day</title>
 <meta name="description" content="UNDO — desserts, drinks and little reasons to feel better.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,120 +12,93 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="progress"></div>
+<div class="scroll-progress"></div>
 
 <header class="nav">
-  <a class="logo" href="#top">UNDO<span>®</span></a>
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#story">Why UNDO</a>
-    <a href="#order">Order</a>
-  </nav>
-  <a class="nav-cta" href="#order">ORDER</a>
+  <a class="nav-logo" href="#home"><img src="assets/undo-logo.png" alt="UNDO — Undo Your Day"></a>
+  <nav class="desktop-nav"><a href="#menu">Menu</a><a href="#story">Story</a><a href="#order">Order</a></nav>
+  <a class="nav-order" href="#order">ORDER</a>
+  <button class="menu-toggle" aria-label="Open menu"><i></i><i></i></button>
 </header>
+<div class="mobile-menu"><a href="#menu">Menu</a><a href="#story">Story</a><a href="#order">Order</a></div>
 
-<main id="top">
-  <section class="hero">
-    <div class="hero-pin">
-      <div class="hero-copy">
-        <p class="eyebrow">A LITTLE RESET FOR YOUR DAY</p>
-        <h1>UNDO<span>.</span></h1>
-        <div class="hero-sub"><em>Undo your day.</em></div>
-        <p class="hero-description">Desserts, drinks and little moments made to change the mood.</p>
-      </div>
-      <div class="hero-object">
-        <div class="ring ring-a"></div>
-        <div class="ring ring-b"></div>
-        <div class="floating-card card-back"></div>
-        <div class="floating-card card-main">
-          <div class="fake-dessert">
-            <div class="cake-layer l1"></div><div class="cake-layer l2"></div><div class="cake-layer l3"></div>
-            <div class="cream"></div>
-          </div>
-          <div class="object-label">UNDO<br><small>YOUR DAY</small></div>
-        </div>
-        <div class="scroll-cue"><span></span>SCROLL</div>
-      </div>
+<main>
+<section id="home" class="hero">
+  <div class="hero-sticky">
+    <div class="hero-glow"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">DESSERTS · DRINKS · GOOD MOODS</p>
+      <div class="hero-logo-wrap"><img src="assets/undo-logo.png" alt="UNDO"></div>
+      <p class="hero-tagline"><em>Undo your day.</em></p>
+      <p class="hero-desc">A little sweetness can change the whole mood.</p>
     </div>
-  </section>
-
-  <section class="statement reveal">
-    <p class="eyebrow">THE UNDO PHILOSOPHY</p>
-    <h2>Some days need<br><em>something sweet.</em></h2>
-    <p class="statement-copy">Not a big solution. Just a small, delicious reset. We make the kind of food that makes you pause, smile, and take one more bite.</p>
-  </section>
-
-  <section id="menu" class="menu-section">
-    <div class="section-top reveal"><div><p class="eyebrow">THE MENU</p><h2>Meet your<br><em>undo.</em></h2></div><p>Swipe. Choose. Crave.</p></div>
-    <div class="product-track">
-      <article class="product-card dark-card">
-        <div class="product-art art-brownie"><i></i><b></b></div>
-        <div class="product-meta"><span>01</span><span>₹89</span></div>
-        <h3>Brownie Drench</h3><p>Fudgy. Cold. Chocolate everywhere.</p>
-      </article>
-      <article class="product-card rose-card">
-        <div class="product-art art-rose"><i></i><b></b></div>
-        <div class="product-meta"><span>02</span><span>₹69</span></div>
-        <h3>Rose Royale</h3><p>Soft rose milk with a little drama.</p>
-      </article>
-      <article class="product-card cream-card">
-        <div class="product-art art-bun"><i></i><b></b></div>
-        <div class="product-meta"><span>03</span><span>₹99</span></div>
-        <h3>Korean Cheese Bun</h3><p>Warm, soft and seriously cheesy.</p>
-      </article>
-      <article class="product-card cake-card">
-        <div class="product-art art-tres"><i></i><b></b></div>
-        <div class="product-meta"><span>04</span><span>₹159</span></div>
-        <h3>Rosemilk Tres Leches</h3><p>Chilled, soaked and unapologetic.</p>
-      </article>
-      <article class="product-card dark-card">
-        <div class="product-art art-tub"><i></i><b></b></div>
-        <div class="product-meta"><span>05</span><span>₹219</span></div>
-        <h3>Brownie Tub</h3><p>Triple chocolate. Zero regrets.</p>
-      </article>
+    <div class="hero-product">
+      <div class="hero-shadow"></div>
+      <div class="hero-dessert"><span></span><i></i><b></b></div>
+      <div class="hero-badge">MADE TO<br>CRAVE</div>
     </div>
-  </section>
+    <div class="scroll-indicator"><span></span><small>SCROLL TO EXPLORE</small></div>
+  </div>
+</section>
 
-  <section id="story" class="cinema">
-    <div class="cinema-sticky">
-      <div class="cinema-copy">
-        <p class="eyebrow">ONE IDEA</p>
-        <h2>Press<br><span>reset.</span></h2>
-        <p>UNDO started with one question:</p>
-        <strong>What if dessert could change the feeling of a whole day?</strong>
-      </div>
-      <div class="cinema-stage">
-        <div class="orbital"></div>
-        <div class="stage-product">
-          <div class="stage-brownie"></div>
-          <span>MADE TO<br>UNDO.</span>
-        </div>
-      </div>
+<section class="statement reveal">
+  <p class="eyebrow">THE IDEA</p>
+  <h2>Bad day?<br><em>Undo it.</em></h2>
+  <p class="body-copy">Not everything needs a solution. Sometimes you just need a brownie, a cold shake, or a warm bun that makes the day feel different.</p>
+</section>
+
+<section id="menu" class="menu">
+  <div class="menu-heading reveal"><div><p class="eyebrow">THE MENU</p><h2>Pick your<br><em>undo.</em></h2></div><p>Swipe on mobile<br>→ drag on desktop</p></div>
+  <div class="product-rail">
+    <article class="product p1"><div class="art art1"><div class="fake-product brownie"></div></div><div class="meta"><span>01</span><span>₹89</span></div><h3>Brownie Drench</h3><p>Fudgy brownie shake · 180 ml</p></article>
+    <article class="product p2"><div class="art art2"><div class="fake-product rose"></div></div><div class="meta"><span>02</span><span>₹69</span></div><h3>Rose Royale</h3><p>Rose milk shake · 180 ml</p></article>
+    <article class="product p3"><div class="art art3"><div class="fake-product bun"></div></div><div class="meta"><span>03</span><span>₹99</span></div><h3>Korean Cheese Bun</h3><p>Soft bun · creamy cheese centre</p></article>
+    <article class="product p4"><div class="art art4"><div class="fake-product tres"></div></div><div class="meta"><span>04</span><span>₹159</span></div><h3>Rosemilk Tres Leches</h3><p>Chilled · soaked · indulgent</p></article>
+    <article class="product p5"><div class="art art5"><div class="fake-product tub"></div></div><div class="meta"><span>05</span><span>₹219</span></div><h3>Brownie Tub</h3><p>Triple chocolate ·  indulgent tub</p></article>
+  </div>
+</section>
+
+<section id="story" class="story-scene">
+  <div class="story-sticky">
+    <div class="story-copy">
+      <p class="eyebrow">ONE SIMPLE THOUGHT</p>
+      <h2>Press<br><em>reset.</em></h2>
+      <p>UNDO is made for the moment when you want to change the feeling of the day.</p>
+      <strong>One bite. One sip. One little undo.</strong>
     </div>
-  </section>
+    <div class="story-visual">
+      <div class="orbit o1"></div><div class="orbit o2"></div>
+      <div class="story-card"><div class="story-dessert"></div><span>UNDO<br>YOUR DAY</span></div>
+    </div>
+  </div>
+</section>
 
-  <section class="feature reveal">
-    <div class="feature-number">01</div>
-    <div><p class="eyebrow">THE LITTLE THINGS</p><h2>Cravings are<br><em>allowed.</em></h2></div>
-    <p class="feature-text">We don't overcomplicate it. Good ingredients, satisfying textures, bold flavours and a presentation that makes you want to reach for your phone before your fork.</p>
-  </section>
+<section class="feature reveal">
+  <div class="feature-num">01</div>
+  <div><p class="eyebrow">MADE FOR CRAVINGS</p><h2>Small<br>things.<br><em>Big mood.</em></h2></div>
+  <p class="feature-copy">Good textures. Bold flavours. Beautifully simple presentation. UNDO is designed around the things you actually want to eat.</p>
+</section>
 
-  <section class="full-bleed">
-    <div class="full-copy"><p class="eyebrow">WHEN THE DAY IS TOO MUCH</p><h2>Have<br><em>a little</em><br>UNDO.</h2><a href="#order" class="pill">GET YOUR UNDO →</a></div>
-    <div class="grain"></div>
-  </section>
+<section class="manifesto">
+  <div class="manifesto-copy">
+    <p class="eyebrow">WHEN THE DAY IS TOO MUCH</p>
+    <h2>Have<br><em>a little</em><br>UNDO.</h2>
+    <a href="#order" class="pill">GET YOUR UNDO ↗</a>
+  </div>
+  <div class="manifesto-orb"></div>
+</section>
 
-  <section id="order" class="order">
-    <p class="eyebrow">READY?</p>
-    <h2>Undo your day.<br><em>One order away.</em></h2>
-    <p class="hours">Every day · 12 PM — 11 PM</p>
-    <div class="delivery"><span><b>0–3 KM</b><small>Min. ₹299 · Free delivery</small></span><span><b>4–10 KM</b><small>Min. ₹499 · Free delivery</small></span></div>
-    <a class="order-button" href="https://wa.me/917448434744?text=Hi%20UNDO%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">ORDER ON WHATSAPP <b>↗</b></a>
-    <a class="instagram" href="https://instagram.com/cafe.undo" target="_blank" rel="noopener">@cafe.undo on Instagram</a>
-  </section>
+<section id="order" class="order">
+  <p class="eyebrow">READY WHEN YOU ARE</p>
+  <h2>Undo your day.<br><em>One order away.</em></h2>
+  <p class="hours">Every day · 12 PM — 11 PM</p>
+  <div class="delivery"><div><b>0–3 KM</b><span>Minimum ₹299 · Free delivery</span></div><div><b>4–10 KM</b><span>Minimum ₹499 · Free delivery</span></div></div>
+  <a class="wa" href="https://wa.me/917448434744?text=Hi%20UNDO%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">ORDER ON WHATSAPP <b>↗</b></a>
+  <a class="ig" href="https://instagram.com/cafe.undo" target="_blank" rel="noopener">@cafe.undo</a>
+</section>
 </main>
 
-<footer><span>UNDO®</span><span>UNDO YOUR DAY.</span><a href="https://instagram.com/cafe.undo" target="_blank">@cafe.undo</a><small>© 2026 UNDO</small></footer>
+<footer><img src="assets/undo-logo.png" alt="UNDO"><span>UNDO YOUR DAY.</span><a href="https://instagram.com/cafe.undo" target="_blank" rel="noopener">Instagram ↗</a><small>© 2026 UNDO</small></footer>
 <script src="script.js"></script>
 </body>
 </html>
